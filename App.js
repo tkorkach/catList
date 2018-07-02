@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { AppRegistry, Text, TextInput, CheckBox, View } from 'react-native';
+import { AppRegistry, TextInput, View } from 'react-native';
+import ListItem from './components/ListItem.js';
+import MenuBar from './components/MenuBar.js';
 
 export default class ShoppingList extends Component {
   constructor(props) {
@@ -9,6 +11,8 @@ export default class ShoppingList extends Component {
 
   render() {
     return (
+    <View style={{flexDirection: 'column'}}>
+      <MenuBar/>
       <View style={{flexDirection: 'column'}}>      
         <View>
             <TextInput
@@ -17,15 +21,11 @@ export default class ShoppingList extends Component {
             onChangeText={(text) => this.setState({text})}
           />
         </View>
-        <View style={{flexDirection: 'row', padding: 10}}>
-          <CheckBox/>
-          <TextInput
-            style={{height: 40}}
-            placeholder="your shopping item"
-            onChangeText={(text) => this.setState({text})}
-          />
-        </View>
+        <ListItem/>
+        <ListItem/>
+        <ListItem/>
       </View>
+    </View>
     );
   }
 }
