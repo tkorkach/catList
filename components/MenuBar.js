@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
-import {Text, View, Button } from 'react-native';
+import {View, Image } from 'react-native';
 
 export default class MenuBar extends Component{
     render() {
         return (
-            <View style={{flexDirection: 'row', justifyContent: 'flex-end', padding: 10}}>
-                <Text>Menu</Text>
+            <View style={{flexDirection: 'row', marginTop: 20}}>
+              <Image
+                source={require('../images/menuIcon.png')} 
+                style={{width: 30, height: 30, padding: 10}}
+               />   
             </View>
         );
     }
